@@ -109,3 +109,50 @@ form > p {
   letter-spacing: 0.05em;
   color: #ffffff;
 }
+.pages {
+  position: relative;
+  width: 231px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  top: 8%;
+  margin: auto;
+  text-align: center;
+}
+.next-previus-pages {
+  width: 26px;
+  height: 26px;
+  border: 3px solid #fe3b1f;
+  display: flex;
+  border-radius: 50%;
+  color: #fe3b1f;
+  text-align: center;
+  align-items: center;
+  font-size: 19px;
+  font-family: Rowdies;
+  font-style: bold;
+  font-weight: bold;
+}
+.eclipses{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+}
+.eclipse-red{
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #FE3B1F;
+}
+
+.eclipse-light{
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #FE3B1F;
+  opacity: 0.1;
+}

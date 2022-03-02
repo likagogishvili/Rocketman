@@ -9,9 +9,27 @@ function PersonalInfo() {
             <input  type={'text'} placeholder = 'Fist Name'/>
             {/* <p>*console error</p> */}
             <input  type={'text'} placeholder = 'Last Name'/>
+            {/* <p>*console error</p> */}
+
             <input  type={'text'} placeholder='E mail'/>
+            {/* <p>*console error</p> */}
+
             <input  type={'number'} placeholder='+995 5_ _ _ _'/>
+            {/* <p>*console error</p> */}
+
         </form>
+        <div className="pages">
+          <button className="next-previus-pages">{'>'}</button>
+          <div className="eclipses">
+            <div className="eclipse-red"></div>
+            <div className="eclipse-light"></div>
+            <div className="eclipse-light"></div>
+            <div className="eclipse-light"></div>
+            <div className="eclipse-light"></div>
+          </div>
+          <button className="next-previus-pages">{'<'}</button>
+
+        </div>
         </div>
       </div>
 
