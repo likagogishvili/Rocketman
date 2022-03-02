@@ -1,0 +1,63 @@
+body {
+  background-image: url(../assets/img/stars.png),
+    radial-gradient(50% 50% at 50% 50%, #0c0d0e 0%, #151718 73.44%);
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+}
+.welcome {
+  position: relative;
+  width: 1090px;
+  height: 1080px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.welcome > h1 {
+  height: 212px;
+  font-family: "Rowdies";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  text-align: center;
+  color: #fe3b1f;
+}
+.welcome > button {
+  width: 395px;
+  height: 79px;
+  background: #fe3b1f;
+  border-radius: 50px;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome > p {
+  width: 338px;
+  height: 66px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  text-decoration-line: underline;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
+.welcome-img {
+  padding: 2%;
+  position: relative;
+}
+img{
+  filter: drop-shadow(20px 20px 20px #131516);
+  
+}

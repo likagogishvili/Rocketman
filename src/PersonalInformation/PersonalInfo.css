@@ -1,0 +1,111 @@
+.information {
+  display: flex;
+  flex-direction: row;
+  height: 1080px;
+}
+.information > .cont1 {
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.cont1 > h1 {
+  width: 716px;
+  height: 128px;
+  top: 131px;
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  align-items: center;
+  text-align: center;
+  color: #fe3b1f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+form {
+  height: 350px;
+  width: 455px;
+  left: 235px;
+  top: 390px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5%;
+  justify-content: space-between;
+}
+input {
+  position: relative;
+  width: 455px;
+  height: 54px;
+  background: #ffffff;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+  padding: 2%;
+}
+::placeholder {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  color: #454545;
+}
+form > p {
+  width: 209px;
+  height: 16px;
+  left: 290px;
+  top: 448px;
+
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+
+  /* Redberry Red */
+
+  color: #fe3b1f;
+}
+
+.information > .cont2 {
+  background-color: rgb(21, 23, 24);
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.cont2 > h1 {
+  width: 716px;
+  height: 94px;
+  top: 112px;
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  align-items: center;
+  color: #fe3b1f;
+  text-align: center;
+}
+.cont2 > p {
+  position: relative;
+  width: 705px;
+  height: 500px;
+  left: 7%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 200%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
