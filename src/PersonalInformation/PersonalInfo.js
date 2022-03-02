@@ -1,4 +1,5 @@
 import "./PersonalInfo.css";
+
 function PersonalInfo() {
   return (
     <div className="information">

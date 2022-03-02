@@ -29,7 +29,7 @@
 }
 
 form {
-  height: 250px;
+  height: 193px;
   width: 455px;
   left: 235px;
   top: 390px;
@@ -40,7 +40,17 @@ form {
   justify-content: space-between;
 }
 
-input {
+option{
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  color: #454545;
+}
+
+input, select{
   position: relative;
   width: 455px;
   height: 54px;
@@ -48,6 +58,28 @@ input {
   border: 1px solid #525557;
   box-sizing: border-box;
   padding: 2%;
+}
+select{
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #454545;
+  cursor: pointer;
+
+}
+
+label{
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  color: #454545;
 }
 ::placeholder {
   font-family: Montserrat;
@@ -57,6 +89,24 @@ input {
   line-height: 17px;
   display: flex;
   color: #454545;
+}
+
+form > button {
+  position: relative;
+  margin-left: auto;
+  width: 201px;
+  height: 32px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #fe3b1f;
+  border: none;
 }
 
 form > p {
@@ -153,4 +203,64 @@ form > p {
   border-radius: 50%;
   background: #fe3b1f;
   opacity: 0.1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 600px;
+}
+.output {
+  position: relative;
+  display: flex;
+  width: 447px;
+  height: 48px;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+}
+.output > .p1 {
+  position: relative;
+  width: 49px;
+  height: 26px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  left: 1%;
+}
+.output > .p2 {
+  position: relative;
+  width: 175px;
+  height: 23px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;  
+  color: #000000;
+}
+.output > button{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: solid 3px #EB3535 ;
+  border-radius: 50%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: #EB3535;
+  right: 1%;
 }
