@@ -1,6 +1,6 @@
-body {
+.page1{
   background-image: url(../assets/img/stars.png),
-    radial-gradient(50% 50% at 50% 50%, #0c0d0e 0%, #151718 73.44%);
+  radial-gradient(50% 50% at 50% 50%, #0c0d0e 0%, #151718 73.44%);
   mix-blend-mode: normal;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -23,7 +23,7 @@ body {
   text-align: center;
   color: #fe3b1f;
 }
-.welcome > button {
+.welcomeButton {
   width: 395px;
   height: 79px;
   background: #fe3b1f;
@@ -57,8 +57,6 @@ body {
   padding: 2%;
   position: relative;
 }
-img{
-  filter: drop-shadow(20px 20px 20px #131516);
-  
+.welcome-img img{
+  filter: drop-shadow(20px 20px 20px #131516);  
 }
-

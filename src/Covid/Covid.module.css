@@ -1,0 +1,247 @@
+.covidinfo {
+  display: flex;
+  flex-direction: row;
+  height: 1400px;
+  text-align: center;
+}
+.covidinfo > .cont1 {
+  background-color: #ffffff;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  height: 1400px;
+}
+
+.cont1 > h1 {
+  width: 716px;
+  height: 128px;
+  top: 131px;
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  align-items: center;
+  text-align: center;
+  color: #fe3b1f;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.covidform {
+  width: 455px;
+  left: 235px;
+  top: 390px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5%;
+  justify-content: space-between;
+}
+.q {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+}
+.questions {
+  height: 175px;
+}
+.questions > p {
+  position: relative;
+  width: 645px;
+  height: 52px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+option {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  color: #454545;
+}
+
+.covidInput {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+}
+
+.date {
+  position: relative;
+  width: 455px;
+  height: 54px;
+  background: #ffffff;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  color: #454545;
+
+}
+
+
+.covidlable {
+  position: relative;
+  width: 197px;
+  height: 21px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+::placeholder {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  color: #454545;
+}
+
+.covidform > button {
+  position: relative;
+  margin-left: auto;
+  width: 201px;
+  height: 32px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #fe3b1f;
+  border: none;
+}
+
+.covidform > p {
+  width: 209px;
+  height: 16px;
+  left: 290px;
+  top: 448px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  color: #fe3b1f;
+}
+
+.covidinfo > .cont2 {
+  background-color: rgb(21, 23, 24);
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  height: 1400px;
+  
+}
+
+.cont2 > h1 {
+  width: 788px;
+  top: 20px;
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 79px;
+  color: #fe3b1f;
+}
+.cont2 > p {
+  position: relative;
+  width: 705px;
+  height: 700px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 38px;
+  letter-spacing: 0.05em;
+  margin: auto;
+  color: #ffffff;
+  text-align: justify;
+  bottom: 10%;
+}
+.covidpages {
+  position: relative;
+  width: 231px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  margin: auto;
+  text-align: center;
+}
+.nextPreviusPages {
+  width: 26px;
+  height: 26px;
+  border: 3px solid #fe3b1f;
+  display: flex;
+  border-radius: 50%;
+  color: #fe3b1f;
+  text-align: center;
+  align-items: center;
+  font-size: 19px;
+  font-family: Rowdies;
+  font-style: bold;
+  font-weight: bold;
+}
+.covideclipses {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+}
+.covideclipseRed {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #fe3b1f;
+}
+
+.covideclipseLight {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #fe3b1f;
+  opacity: 0.1;
+}
+
+.main1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 600px;
+}
+
+

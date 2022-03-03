@@ -1,10 +1,12 @@
-import "./Skills.css";
+import styles from "./Skills.module.css";
+import { Link } from "react-router-dom";
+
 function Skills() {
   return (
-    <div className="information">
-      <div className="cont1">
+    <div className={styles.information}>
+      <div className={styles.cont1}>
         <h1>Tell us about your skills</h1>
-        <div className="main">
+        <div className={styles.main}>
           <form>
             <select name="Skills" id="Skills"> 
             <option value="" disabled selected className="op">Skills</option>
@@ -17,27 +19,29 @@ function Skills() {
             <button>Add Programming Language</button>
           </form>
 
-          <div className="output">
-            <p className="p1">PHP</p>
-            <p className="p2">Years of Experience: 3</p>
+          <div className={styles.output}>
+            <p className={styles.p1}>PHP</p>
+            <p className={styles.p2}>Years of Experience: 3</p>
             <button>-</button>
           </div>
 
-          <div className="pages">
-            <button className="next-previus-pages">{">"}</button>
-            <div className="eclipses">
-              <div className="eclipse-red"></div>
-              <div className="eclipse-red"></div>
-              <div className="eclipse-light"></div>
-              <div className="eclipse-light"></div>
-              <div className="eclipse-light"></div>
+          <div className={styles.pages}>
+            <Link to='./PersonalInfo' style={{ textDecoration: 'none' }}>
+            <button className= {styles.nextPreviusPages}>{">"}</button>
+            </Link>
+            <div className={styles.eclipses}>
+              <div className={styles.eclipseRed}></div>
+              <div className={styles.eclipseRed}></div>
+              <div className={styles.eclipseLight}></div>
+              <div className={styles.eclipseLight}></div>
+              <div className={styles.eclipseLight}></div>
             </div>
-            <button className="next-previus-pages">{"<"}</button>
+            <button className={styles.nextPreviusPages}>{"<"}</button>
           </div>
         </div>
       </div>
 
-      <div className="cont2">
+      <div className={styles.cont2}>
         <h1>A bit about our battles</h1>
         <p>
           As we said, Redberry has been on the field for quite some time now,

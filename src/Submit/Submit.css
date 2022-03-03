@@ -1,0 +1,48 @@
+.box {
+  height: 1080;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+
+}
+.submit {
+  position: relative;
+  width: 30%;
+  height: 200px;
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.submit > button {
+  width: 395px;
+  height: 79px;
+  background-color: #fe3b1f;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+  color: #ffffff;
+  align-items: center;
+  text-align: center;
+  border-radius: 50px;
+}
+.submit > p {
+  width: 190px;
+  height: 50px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  align-items: center;
+  text-align: center;
+  text-decoration-line: underline;
+
+  color: #ffffff;
+}

@@ -1,0 +1,22 @@
+.thx {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.thx > h1 {
+  width: 1066px;
+  height: 191px;
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 119px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fe3b1f;
+}
