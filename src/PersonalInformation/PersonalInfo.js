@@ -1,8 +1,6 @@
 import { React, useState } from "react";
 import styles from "./PersonalInfo.module.css";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
-
+import { useHistory, Link } from "react-router-dom";
 function PersonalInfo() {
   var regex = /[$-/:-?{-~!"^_`\[\]]/;
   const [fname, setFName] = useState("");
@@ -37,7 +35,6 @@ function PersonalInfo() {
     if (lname.trim().length < 2 || regex.test(lname)) {
       setLnameError("Please Enter Valid Last Name");
       check = false;
-      
     }
     if (
       !mail.includes("@") ||
@@ -47,18 +44,15 @@ function PersonalInfo() {
     ) {
       setMailError("Please Enter Valid Mail");
       check = false;
-
     }
 
     if (!(!number.includes("+995") || number.toString().length === 0)) {
       setNumberError("Plese Enter Valid Phone Number");
       check = false;
-      
     }
     return check;
   }
-  function submit(event) {
-    event.preventDefault();
+  function submit() {
     if (validations() === true) {
       history.push("./Skills");
     }
@@ -108,8 +102,8 @@ function PersonalInfo() {
             <p>{numberError}</p>
           </form>
           <div className={styles.pages}>
-            <Link to= {'./'} style={{ textDecoration: 'none' }}>
-            <button className={styles.nextPreviusPages}>{">"}</button>
+            <Link to={"./"} style={{ textDecoration: "none" }}>
+              <button className={styles.nextPreviusPages}>{">"}</button>
             </Link>
             <div className={styles.eclipses}>
               <div className={styles.eclipseRed}></div>

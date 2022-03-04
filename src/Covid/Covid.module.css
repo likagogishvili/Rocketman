@@ -83,7 +83,7 @@ option {
 .date {
   position: relative;
   width: 455px;
-  height: 54px;
+  height: 55px;
   background: #ffffff;
   border: 1px solid #525557;
   box-sizing: border-box;
@@ -140,6 +140,20 @@ option {
 }
 
 .covidform > p {
+  width: 209px;
+  height: 16px;
+  left: 290px;
+  top: 448px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  color: #fe3b1f;
+}
+.errorText{
   width: 209px;
   height: 16px;
   left: 290px;

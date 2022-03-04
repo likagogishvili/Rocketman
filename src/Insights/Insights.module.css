@@ -71,6 +71,7 @@ option {
   line-height: 17px;
   display: flex;
   color: #454545;
+  
 }
 
 .insightsinput {
@@ -82,10 +83,9 @@ option {
   box-sizing: border-box;
 }
 
-textarea {
-  position: relative;
+.textarea1 {
   width: 535px;
-  height: 122px;
+  height: 80px;
   background: #ffffff;
   border: 1px solid #525557;
   box-sizing: border-box;
@@ -94,7 +94,6 @@ textarea {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  display: flex;
   color: #454545;
   padding: 3%;
 }

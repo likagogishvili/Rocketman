@@ -1,33 +1,73 @@
+import { React, useState } from "react";
 import styles from "./Skills.module.css";
 import { Link } from "react-router-dom";
+import SkillsData from "./SkillsData";
 
-function Skills() {
+function Skills(props) {
+  const [language, setLanguage] = useState("");
+  const [experience, setExperience] = useState("");
+  const [skillError, setSkillError] = useState("");
+  const [experienceError, setexperienceError] = useState("");
+  const [rend, setRender] = useState(false);
+  
+
+  function exp(event) {
+    setExperience(event.target.value);
+  }
+
+  function onChangeValue(value) {
+    setLanguage(value.value);
+  }
+  console.log(experience, language);
+  let check = true;
+  function SkillsValidations() {
+    if (language.trim().length === 0) {
+      setSkillError("Please Enter skill");
+      check = false;
+    }
+
+    if (experience.toString().length === 0) {
+      setexperienceError("Please Enter Experience");
+      check = false;
+    }
+    return check;
+  }
+  function skillsSubmit() {
+    if (SkillsValidations() === true) {
+      console.log("sucsess");
+      setRender(true);
+    }
+  }
+
   return (
     <div className={styles.information}>
       <div className={styles.cont1}>
         <h1>Tell us about your skills</h1>
         <div className={styles.main}>
           <form>
-            <select name="Skills" id="Skills"> 
-            <option value="" disabled selected className="op">Skills</option>
-            <option value="javascript">JavaScript</option>
-            <option value="php">PHP</option>
-            </select>
-            {/* <p>*console error</p> */}
-            <input type={"text"} placeholder="Experience Duration in Years" />
-            {/* <p>*console error</p> */}
-            <button>Add Programming Language</button>
-          </form>
+            <SkillsData onChange={onChangeValue} />
+            <p>{skillError}</p>
+            <input
+              type={"number"}
+              placeholder="Experience Duration in Years"
+              value={experience}
+              onChange={exp}
+            />
+            <p>{experienceError}</p>
 
-          <div className={styles.output}>
-            <p className={styles.p1}>PHP</p>
-            <p className={styles.p2}>Years of Experience: 3</p>
-            <button>-</button>
-          </div>
+            <button onClick={skillsSubmit}>Add Programming Language</button>
+          </form>
+          {rend && (
+            <div className={styles.output}>
+              <p className={styles.p1}>{language}</p>
+              <p className={styles.p2}>Years of Experience: {experience}</p>
+              <button>-</button>
+            </div>
+          )}
 
           <div className={styles.pages}>
-            <Link to='./PersonalInfo' style={{ textDecoration: 'none' }}>
-            <button className= {styles.nextPreviusPages}>{">"}</button>
+            <Link to="./PersonalInfo" style={{ textDecoration: "none" }}>
+              <button className={styles.nextPreviusPages}>{">"}</button>
             </Link>
             <div className={styles.eclipses}>
               <div className={styles.eclipseRed}></div>
