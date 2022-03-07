@@ -11,8 +11,9 @@ function Insights(props) {
   const [aboutYouError, setAboutYouError] = useState("");
   const [speeckError, setSpeechError] = useState("");
   const [nextpage, setnextpage] = useState(false);
+  const [devTalksVal,setDevTalksVal] = useState("")
 
-  const insights = { devTalks, aboutYou, speech};
+  const insights = { devTalksVal, aboutYou, speech};
 
   function talkChange(event) {
     setDevTalks(event.target.value);
@@ -31,12 +32,12 @@ function Insights(props) {
       check = false;
     }
     if(devTalks==='Y'){
-      setDevTalks(true)
+      setDevTalksVal(true)
     }
     if(devTalks==='N'){
-      setDevTalks(false)
+      setDevTalksVal(false)
     }
-    if (aboutYou.trim().length === 0) {
+    if (devTalks==='Y' && aboutYou.trim().length === 0) {
       setAboutYouError("Please Enter The Text");
       check = false;
     }
@@ -75,7 +76,7 @@ if(!nextpage)
                   className={styles["insightsinput"]}
                   onChange={talkChange}
                 />
-                <label for="Y">Yes</label>
+                <label htmlFor="Y">Yes</label>
               </div>
 
               <div className={styles.q1}>
@@ -87,12 +88,13 @@ if(!nextpage)
                   className={styles["insightsinput"]}
                   onChange={talkChange}
                 />
-                <label for="N">No</label>
+                <label htmlFor="N">No</label>
               </div>
             </div>
             <p>{devTalkError}</p>
 
-            <div className={styles.questions1}>
+            { devTalks==='Y' &&
+              <div className={styles.questions1}>
               <p>What would you speak about at Devtalk?</p>
               <textarea
                 className={styles.textarea1}
@@ -101,7 +103,8 @@ if(!nextpage)
                 placeholder="I would..."
                 onChange={aboutChange}
               ></textarea>
-            </div>
+            </div>}
+
             <p>{aboutYouError}</p>
 
             <div className={styles.questions1}>

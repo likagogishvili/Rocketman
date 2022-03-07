@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import styles from "./Skills.module.css";
-import { Link } from "react-router-dom";
 import SkillsData from "./SkillsData";
 import OutputSkills from "./OutputSkills";
 import Covid from "../Covid/Covid";
@@ -8,18 +7,17 @@ import Covid from "../Covid/Covid";
 function Skills(props) {
   const [language, setLanguage] = useState("");
   const [experience, setExperience] = useState("");
+  const [ids, setIds] = useState("");
   const [skillError, setSkillError] = useState("");
   const [experienceError, setexperienceError] = useState("");
   const [nextpage, setnextpage] = useState(false);
-
   const [selectedSkills, setSelectedSkills] = useState([])
-
-
 
   function addSkill() {
     const skill = {
       language,
-      experience
+      experience,
+      ids
     }
     if (selectedSkills.find(x => x.language === language)) {
       alert('This skill is already selected')
@@ -27,10 +25,7 @@ function Skills(props) {
     else {
       setSelectedSkills([...selectedSkills, skill])
     }
-
-
   }
-
   function onDeleteElement(index) {
     setSelectedSkills([...selectedSkills.filter((x, i) => i !== index)])
   }
@@ -51,6 +46,10 @@ function Skills(props) {
     return check;
   }
 
+  function languageAndId(value){
+    setIds(value.id)    
+    setLanguage(value.value)
+  }
 
   function SubmitSkillPage() {
     if (SkillsValidations() === true) {
@@ -67,8 +66,7 @@ function Skills(props) {
           <h1>Tell us about your skills</h1>
           <div className={styles.main}>
             <form onSubmit={handleSubmit}>
-              <SkillsData onChange={(value) => setLanguage(value.value)} />
-
+              <SkillsData onChange={languageAndId} />
               <p>{skillError}</p>
               <input
                 type={"number"}
@@ -85,11 +83,8 @@ function Skills(props) {
               onDelete={onDeleteElement}
             />
 
-
             <div className={styles.pages}>
-              <Link to="./PersonalInfo" style={{ textDecoration: "none" }}>
-                <button className={styles.nextPreviusPages}>{">"}</button>
-              </Link>
+                <button className={styles.nextPreviusPages}>{"<"}</button>
               <div className={styles.eclipses}>
                 <div className={styles.eclipseRed}></div>
                 <div className={styles.eclipseRed}></div>
@@ -101,7 +96,7 @@ function Skills(props) {
                 className={styles.nextPreviusPages}
                 onClick={SubmitSkillPage}
               >
-                {"<"}
+                {">"}
               </button>
             </div>
           </div>

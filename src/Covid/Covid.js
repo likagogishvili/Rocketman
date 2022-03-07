@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./Covid.module.css";
-import { Link } from "react-router-dom";
 import Insights from "../Insights/Insights";
 
 function Covid(props) {
@@ -20,10 +19,8 @@ function Covid(props) {
   const [contactValue,setContactVal]=useState("")
   const [vacinatedValue,setVacVal]=useState("")
 
-  const covid = { work, contactValue, vacinatedValue, vacinatedDate, vaccinated};
+  const covid = { work, contactValue, covidDate, vacinatedValue, vacinatedDate};
 
-
-  // console.log(props.personalInfo, props.skills)
 
   function workChange(event) {
     setWork(event.target.value);
@@ -108,11 +105,11 @@ function Covid(props) {
                     type="radio"
                     id="office"
                     name="n"
-                    value="office"
+                    value="from_office"
                     className={styles["covidInput"]}
                     onChange={workChange}
                   />
-                  <label for="office" className={styles["covidlable"]}>
+                  <label htmlFor="office" className={styles["covidlable"]}>
                     From Sairme Office
                   </label>
                 </div>
@@ -122,11 +119,11 @@ function Covid(props) {
                     type="radio"
                     id="home"
                     name="n"
-                    value="home"
+                    value="from_home"
                     className={styles["covidInput"]}
                     onChange={workChange}
                   />
-                  <label for="home" className={styles["covidlable"]}>
+                  <label htmlFor="home" className={styles["covidlable"]}>
                     From Home
                   </label>
                 </div>
@@ -140,7 +137,7 @@ function Covid(props) {
                     className={styles["covidInput"]}
                     onChange={workChange}
                   />
-                  <label for="hybrid" className={styles["covidlable"]}>
+                  <label htmlFor="hybrid" className={styles["covidlable"]}>
                     Hybrid
                   </label>
                 </div>
@@ -158,7 +155,7 @@ function Covid(props) {
                     className={styles["covidInput"]}
                     onChange={CovidChange}
                   />
-                  <label for="Yes" className={styles["covidlable"]}>
+                  <label htmlFor="Yes" className={styles["covidlable"]}>
                     Yes
                   </label>
                 </div>
@@ -172,7 +169,7 @@ function Covid(props) {
                     className={styles["covidInput"]}
                     onChange={CovidChange}
                   />
-                  <label for="No" className={styles["covidlable"]}>
+                  <label htmlFor="No" className={styles["covidlable"]}>
                     No
                   </label>
                 </div>
@@ -207,7 +204,7 @@ function Covid(props) {
                     className={styles["covidInput"]}
                     onChange={VacinationChange}
                   />
-                  <label for="Y" className={styles["covidlable"]}>
+                  <label htmlFor="Y" className={styles["covidlable"]}>
                     Yes
                   </label>
                 </div>
@@ -221,7 +218,7 @@ function Covid(props) {
                     className={styles["covidInput"]}
                     onChange={VacinationChange}
                   />
-                  <label for="N" className={styles["covidlable"]}>
+                  <label htmlFor="N" className={styles["covidlable"]}>
                     No
                   </label>
                 </div>
@@ -248,9 +245,7 @@ function Covid(props) {
             </form>
           </div>
           <div className={styles["covidpages"]}>
-            <Link to={"./Skills"} style={{ textDecoration: "none" }}>
-              <button className={styles["nextPreviusPages"]}>{">"}</button>
-            </Link>
+              <button className={styles["nextPreviusPages"]}>{"<"}</button>
             <div className={styles["covideclipses"]}>
               <div className={styles["covideclipseRed"]}></div>
               <div className={styles["covideclipseRed"]}></div>
@@ -262,7 +257,7 @@ function Covid(props) {
               className={styles["nextPreviusPages"]}
               onClick={covidsubmit}
             >
-              {"<"}
+              {">"}
             </button>
           </div>
         </div>

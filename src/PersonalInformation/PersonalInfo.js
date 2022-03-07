@@ -14,6 +14,7 @@ function PersonalInfo() {
   const [numberError, setNumberError] = useState("");
   const [nextpage, setnextpage] = useState(false);
   const personalInfo = { fname, lname, mail, number };
+
   function fistname(event) {
     setFName(event.target.value);
   }
@@ -41,7 +42,7 @@ function PersonalInfo() {
       !mail.includes("@") ||
       !mail.trim().length === 0 ||
       !mail.includes(".") ||
-      !(mail.includes("com") || mail.includes("org") || mail.includes("ru"))
+      !(mail.includes("com") || mail.includes("org") || mail.includes("ru") || mail.includes("ge"))
     ) {
       setMailError("Please Enter Valid Mail");
       check = false;
@@ -107,7 +108,7 @@ function PersonalInfo() {
               <p>{numberError}</p>
             </form>
             <div className={styles.pages}>
-              <button className={styles.nextPreviusPages}>{">"}</button>
+              <button className={styles.nextPreviusPages}>{"<"}</button>
               <div className={styles.eclipses}>
                 <div className={styles.eclipseRed}></div>
                 <div className={styles.eclipseLight}></div>
@@ -117,7 +118,7 @@ function PersonalInfo() {
               </div>
 
               <button className={styles.nextPreviusPages} onClick={submit}>
-                {"<"}
+                {">"}
               </button>
             </div>
           </div>
