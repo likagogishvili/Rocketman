@@ -7,6 +7,7 @@ import Covid from "./Covid/Covid";
 import Insights from './Insights/Insights'
 import Submit from "./Submit/Submit";
 import Thanks from './Thanks/Thanks'
+import Aplication from "./Aplication/Aplication";
 function App() {
   return (
     <Router>
@@ -15,7 +16,7 @@ function App() {
           <Route exact path="/">
             <Welcome />
           </Route>
-          <Route path="/PersonalInfo">
+          <Route path="/UserInfo">
             <PersonalInfo />
           </Route>
           <Route path="/Skills">
@@ -33,6 +34,10 @@ function App() {
           <Route path="/Thanks">
             <Thanks />
           </Route>
+          <Route path="/Aplication">
+            <Aplication/>
+          </Route>
+
         </Switch>
       </div>
     </Router>

@@ -224,6 +224,7 @@ form > p {
   align-items: center;
   border: 1px solid #525557;
   box-sizing: border-box;
+  margin-top: 20px;
 }
 .output > .p1 {
   position: relative;

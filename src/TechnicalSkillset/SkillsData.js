@@ -11,8 +11,8 @@ function SkillsData(props) {
       const data = response.data;
       setSkillsData([
         {
-          id: data.id,
-          label: data.title,
+          id: data[0].id,
+          label: data[0].title,
           value: data[0].title,
         },
         {

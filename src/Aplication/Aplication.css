@@ -1,0 +1,238 @@
+.content {
+  width: 60%;
+  min-height: 1800px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin: auto;
+  margin-top: 1%;
+  flex-direction: column;
+}
+.aplication_h1 {
+  position: relative;
+  width: 95%;
+  height: 100px;
+  font-family: Rowdies;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 70px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.11em;
+  color: #ffffff;
+}
+
+.heading {
+  width: 100%;
+  height: 52px;
+  background-color: #f05039;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.img_div {
+  position: relative;
+  display: flex;
+  width: 2%;
+  height: 30%;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: 3%;
+}
+.numbers {
+  position: relative;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  padding-left: 2%;
+}
+.app_output {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  display: flex;
+  min-height: 1300px;
+  background-color: #ffffff;
+  width: 100%;
+  flex-direction: row;
+}
+.left {
+  height: 100%;
+  width: 50%;
+}
+.right {
+  height: 100%;
+  width: 50%;
+
+}
+
+.info {
+  min-height: 20%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2%;
+}
+
+.info > h2 {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+  color: #fe3b1f;
+  text-align: center;
+}
+
+.name_cont {
+  height: 42px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 6%;
+}
+
+.name_cont > p {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.q2 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.q {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+}
+
+.questions {
+  height: 175px;
+}
+.questions > p {
+  position: relative;
+  width: 645px;
+  height: 52px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+option {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  color: #454545;
+}
+
+.covidInput {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+}
+
+.covidlable {
+  position: relative;
+  width: 197px;
+  height: 21px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.date {
+  position: relative;
+  width: 455px;
+  height: 55px;
+  background: #ffffff;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  color: #454545;
+}
+
+.textarea3 {
+    width: 99%;
+    height: 80px;
+    background: #ffffff;
+    border: 1px solid #525557;
+    box-sizing: border-box;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #454545;
+    padding: 3%;
+  }
+
+  .questions1 {
+    height: 175px;
+    padding-top: 2%;
+  }
+  .questions1 > p {
+    position: relative;
+    width: 645px;
+    height: 52px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .app_output{
+      flex-direction: column;
+    }
+  }

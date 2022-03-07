@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import styles from "./PersonalInfo.module.css";
-import { useHistory, Link } from "react-router-dom";
+import Skills from "../TechnicalSkillset/Skills";
+
 function PersonalInfo() {
   var regex = /[$-/:-?{-~!"^_`\[\]]/;
   const [fname, setFName] = useState("");
@@ -11,8 +12,8 @@ function PersonalInfo() {
   const [lnameError, setLnameError] = useState("");
   const [mailError, setMailError] = useState("");
   const [numberError, setNumberError] = useState("");
-  const history = useHistory();
-
+  const [nextpage, setnextpage] = useState(false);
+  const personalInfo = { fname, lname, mail, number };
   function fistname(event) {
     setFName(event.target.value);
   }
@@ -52,86 +53,90 @@ function PersonalInfo() {
     }
     return check;
   }
-  function submit() {
+  function submit(event) {
+    event.preventDefault();
     if (validations() === true) {
-      history.push("./Skills");
+      setnextpage(true);
     }
   }
 
-  console.log(fname, lname);
-  return (
-    <div className={styles.information}>
-      <div className={styles.cont1}>
-        <h1>Hey, Rocketeer, what are your coordinates?</h1>
-        <div>
-          <form className={styles["infoform"]}>
-            <input
-              type={"text"}
-              id="name"
-              placeholder="Fist Name"
-              className={styles["infoinput"]}
-              value={fname}
-              onChange={fistname}
-            />
-            <p>{nameError}</p>
-            <input
-              type={"text"}
-              placeholder="Last Name"
-              className={styles["infoinput"]}
-              value={lname}
-              onChange={lastname}
-            />
-            <p>{lnameError}</p>
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+  if (!nextpage) {
+    return (
+      <div className={styles.information}>
+        <div className={styles.cont1}>
+          <h1>Hey, Rocketeer, what are your coordinates?</h1>
+          <div>
+            <form className={styles["infoform"]} onSubmit={handleSubmit}>
+              <input
+                type={"text"}
+                id="name"
+                placeholder="Fist Name"
+                className={styles["infoinput"]}
+                value={fname}
+                onChange={fistname}
+              />
+              <p>{nameError}</p>
+              <input
+                type={"text"}
+                placeholder="Last Name"
+                className={styles["infoinput"]}
+                value={lname}
+                onChange={lastname}
+              />
+              <p>{lnameError}</p>
 
-            <input
-              type={"email"}
-              placeholder="E mail"
-              className={styles["infoinput"]}
-              value={mail}
-              onChange={e_mail}
-            />
-            <p>{mailError}</p>
+              <input
+                type={"email"}
+                placeholder="E mail"
+                className={styles["infoinput"]}
+                value={mail}
+                onChange={e_mail}
+              />
+              <p>{mailError}</p>
 
-            <input
-              type={"number"}
-              placeholder="+995 5_ _ _ _"
-              className={styles["infoinput"]}
-              value={number}
-              onChange={phone_number}
-            />
-            <p>{numberError}</p>
-          </form>
-          <div className={styles.pages}>
-            <Link to={"./"} style={{ textDecoration: "none" }}>
+              <input
+                type={"number"}
+                placeholder="+995 5_ _ _ _"
+                className={styles["infoinput"]}
+                value={number}
+                onChange={phone_number}
+              />
+              <p>{numberError}</p>
+            </form>
+            <div className={styles.pages}>
               <button className={styles.nextPreviusPages}>{">"}</button>
-            </Link>
-            <div className={styles.eclipses}>
-              <div className={styles.eclipseRed}></div>
-              <div className={styles.eclipseLight}></div>
-              <div className={styles.eclipseLight}></div>
-              <div className={styles.eclipseLight}></div>
-              <div className={styles.eclipseLight}></div>
-            </div>
+              <div className={styles.eclipses}>
+                <div className={styles.eclipseRed}></div>
+                <div className={styles.eclipseLight}></div>
+                <div className={styles.eclipseLight}></div>
+                <div className={styles.eclipseLight}></div>
+                <div className={styles.eclipseLight}></div>
+              </div>
 
-            <button className={styles.nextPreviusPages} onClick={submit}>
-              {"<"}
-            </button>
+              <button className={styles.nextPreviusPages} onClick={submit}>
+                {"<"}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.cont2}>
-        <h1>Redberry Origins</h1>
-        <p>
-          You watch “What? Where? When?” Yeah. Our founders used to play it.
-          That’s where they got a question about a famous American author and
-          screenwriter Ray Bradbury. Albeit, our CEO Gaga Darsalia forgot the
-          exact name and he answered Ray Redberry. And at that moment, a name
-          for a yet to be born company was inspired - Redberry 😇
-        </p>
+        <div className={styles.cont2}>
+          <h1>Redberry Origins</h1>
+          <p>
+            You watch “What? Where? When?” Yeah. Our founders used to play it.
+            That’s where they got a question about a famous American author and
+            screenwriter Ray Bradbury. Albeit, our CEO Gaga Darsalia forgot the
+            exact name and he answered Ray Redberry. And at that moment, a name
+            for a yet to be born company was inspired - Redberry 😇
+          </p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }else {
+    return <Skills personalInfo={personalInfo} setnextpage={setnextpage} />;
+  }
 }
-
 export default PersonalInfo;

@@ -2,25 +2,42 @@ import { React, useState } from "react";
 import styles from "./Skills.module.css";
 import { Link } from "react-router-dom";
 import SkillsData from "./SkillsData";
+import OutputSkills from "./OutputSkills";
+import Covid from "../Covid/Covid";
 
 function Skills(props) {
   const [language, setLanguage] = useState("");
   const [experience, setExperience] = useState("");
   const [skillError, setSkillError] = useState("");
   const [experienceError, setexperienceError] = useState("");
-  const [rend, setRender] = useState(false);
-  
+  const [nextpage, setnextpage] = useState(false);
 
-  function exp(event) {
-    setExperience(event.target.value);
+  const [selectedSkills, setSelectedSkills] = useState([])
+
+
+
+  function addSkill() {
+    const skill = {
+      language,
+      experience
+    }
+    if (selectedSkills.find(x => x.language === language)) {
+      alert('This skill is already selected')
+    }
+    else {
+      setSelectedSkills([...selectedSkills, skill])
+    }
+
+
   }
 
-  function onChangeValue(value) {
-    setLanguage(value.value);
+  function onDeleteElement(index) {
+    setSelectedSkills([...selectedSkills.filter((x, i) => i !== index)])
   }
-  console.log(experience, language);
-  let check = true;
+
   function SkillsValidations() {
+    let check = true;
+
     if (language.trim().length === 0) {
       setSkillError("Please Enter skill");
       check = false;
@@ -30,70 +47,87 @@ function Skills(props) {
       setexperienceError("Please Enter Experience");
       check = false;
     }
+
     return check;
   }
-  function skillsSubmit() {
+
+
+  function SubmitSkillPage() {
     if (SkillsValidations() === true) {
-      console.log("sucsess");
-      setRender(true);
+      setnextpage(true);
     }
   }
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+  if (!nextpage) {
+    return (
+      <div className={styles.information}>
+        <div className={styles.cont1}>
+          <h1>Tell us about your skills</h1>
+          <div className={styles.main}>
+            <form onSubmit={handleSubmit}>
+              <SkillsData onChange={(value) => setLanguage(value.value)} />
 
-  return (
-    <div className={styles.information}>
-      <div className={styles.cont1}>
-        <h1>Tell us about your skills</h1>
-        <div className={styles.main}>
-          <form>
-            <SkillsData onChange={onChangeValue} />
-            <p>{skillError}</p>
-            <input
-              type={"number"}
-              placeholder="Experience Duration in Years"
-              value={experience}
-              onChange={exp}
+              <p>{skillError}</p>
+              <input
+                type={"number"}
+                placeholder="Experience Duration in Years"
+                value={experience}
+                onChange={(e) => setExperience(e.target.value)}
+              />
+              <p>{experienceError}</p>
+
+              <button onClick={addSkill}>Add Programming Language</button>
+            </form>
+            <OutputSkills
+              selectedSkills={selectedSkills}
+              onDelete={onDeleteElement}
             />
-            <p>{experienceError}</p>
 
-            <button onClick={skillsSubmit}>Add Programming Language</button>
-          </form>
-          {rend && (
-            <div className={styles.output}>
-              <p className={styles.p1}>{language}</p>
-              <p className={styles.p2}>Years of Experience: {experience}</p>
-              <button>-</button>
-            </div>
-          )}
 
-          <div className={styles.pages}>
-            <Link to="./PersonalInfo" style={{ textDecoration: "none" }}>
-              <button className={styles.nextPreviusPages}>{">"}</button>
-            </Link>
-            <div className={styles.eclipses}>
-              <div className={styles.eclipseRed}></div>
-              <div className={styles.eclipseRed}></div>
-              <div className={styles.eclipseLight}></div>
-              <div className={styles.eclipseLight}></div>
-              <div className={styles.eclipseLight}></div>
+            <div className={styles.pages}>
+              <Link to="./PersonalInfo" style={{ textDecoration: "none" }}>
+                <button className={styles.nextPreviusPages}>{">"}</button>
+              </Link>
+              <div className={styles.eclipses}>
+                <div className={styles.eclipseRed}></div>
+                <div className={styles.eclipseRed}></div>
+                <div className={styles.eclipseLight}></div>
+                <div className={styles.eclipseLight}></div>
+                <div className={styles.eclipseLight}></div>
+              </div>
+              <button
+                className={styles.nextPreviusPages}
+                onClick={SubmitSkillPage}
+              >
+                {"<"}
+              </button>
             </div>
-            <button className={styles.nextPreviusPages}>{"<"}</button>
           </div>
         </div>
-      </div>
 
-      <div className={styles.cont2}>
-        <h1>A bit about our battles</h1>
-        <p>
-          As we said, Redberry has been on the field for quite some time now,
-          and we have touched and embraced a variety of programming languages,
-          technologies, philosophies, and frameworks. We are battle-tested in
-          PHP Laravel Stack with Vue.js, refined in React, and allies with
-          Serverside technologies like Docker and Kubernetes, and now we have
-          set foot in the web3 industry.
-        </p>
+        <div className={styles.cont2}>
+          <h1>A bit about our battles</h1>
+          <p>
+            As we said, Redberry has been on the field for quite some time now,
+            and we have touched and embraced a variety of programming languages,
+            technologies, philosophies, and frameworks. We are battle-tested in
+            PHP Laravel Stack with Vue.js, refined in React, and allies with
+            Serverside technologies like Docker and Kubernetes, and now we have
+            set foot in the web3 industry.
+          </p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <Covid
+        personalInfo={props.personalInfo}
+        skills={selectedSkills}
+      />
+    );
+  }
 }
 
 export default Skills;

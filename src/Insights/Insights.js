@@ -1,32 +1,40 @@
 import { useState } from "react";
 import styles from "./Insights.module.css";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Submit from "../Submit/Submit";
 
-function Insights() {
-    const history= useHistory()
-    const [devTalks, setDevTalks]= useState('')
-    const [aboutYou,SetAboutYou] = useState("")
-    const [speech,setSpeech] = useState("")
-    const [devTalkError, setDevTalkError] = useState("")
-    const [aboutYouError, setAboutYouError] = useState("")
-    const [speeckError, setSpeechError] = useState("")
+function Insights(props) {
+  const [devTalks, setDevTalks] = useState("");
+  const [aboutYou, SetAboutYou] = useState("");
+  const [speech, setSpeech] = useState("");
+  const [devTalkError, setDevTalkError] = useState("");
+  const [aboutYouError, setAboutYouError] = useState("");
+  const [speeckError, setSpeechError] = useState("");
+  const [nextpage, setnextpage] = useState(false);
 
+  const insights = { devTalks, aboutYou, speech};
 
-  function talkChange(event){
+  function talkChange(event) {
     setDevTalks(event.target.value);
   }
-  function aboutChange(event){
+  function aboutChange(event) {
     SetAboutYou(event.target.value);
   }
-  function speechChange(event){
-      setSpeech(event.target.value);
+  function speechChange(event) {
+    setSpeech(event.target.value);
   }
 
-  function insightsValidations(){
+  function insightsValidations() {
     let check = true;
     if (devTalks.trim().length === 0) {
       setDevTalkError("Please Choose One Option");
       check = false;
+    }
+    if(devTalks==='Y'){
+      setDevTalks(true)
+    }
+    if(devTalks==='N'){
+      setDevTalks(false)
     }
     if (aboutYou.trim().length === 0) {
       setAboutYouError("Please Enter The Text");
@@ -38,32 +46,47 @@ function Insights() {
       check = false;
     }
     return check;
-}
-  console.log(devTalks, aboutYou, speech)
-  function insightsSubmit(){
+  }
+  
+  function insightsSubmit() {
     if (insightsValidations() === true) {
-      history.push("./Submit");
-    }
+      setnextpage(true)
+  }
   }
 
-
-  return (
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+if(!nextpage)
+{  return (
     <div className={styles.information1}>
       <div className={styles.cont1}>
-
         <h1>What about you?</h1>
         <div className={styles.main4}>
-          <form className={styles.insightsform}>
-
+          <form className={styles.insightsform} onSubmit={handleSubmit}>
             <div className={styles.questions1}>
               <p>Would you attend Devtalks and maybe also organize your own?</p>
               <div className={styles.q1}>
-                <input type="radio" id="Y" name="n3" value="Y"  className={styles['insightsinput']} onChange={talkChange}/>
+                <input
+                  type="radio"
+                  id="Y"
+                  name="n3"
+                  value="Y"
+                  className={styles["insightsinput"]}
+                  onChange={talkChange}
+                />
                 <label for="Y">Yes</label>
               </div>
 
               <div className={styles.q1}>
-                <input type="radio" id="N" name="n3" value="N" className={styles['insightsinput']} onChange={talkChange}/>
+                <input
+                  type="radio"
+                  id="N"
+                  name="n3"
+                  value="N"
+                  className={styles["insightsinput"]}
+                  onChange={talkChange}
+                />
                 <label for="N">No</label>
               </div>
             </div>
@@ -82,7 +105,7 @@ function Insights() {
             <p>{aboutYouError}</p>
 
             <div className={styles.questions1}>
-              <p>What would you speak about at Devtalk?</p>
+              <p>Tell us something special</p>
               <textarea
                 className={styles.textarea1}
                 name="comment"
@@ -92,23 +115,27 @@ function Insights() {
               ></textarea>
             </div>
             <p>{speeckError}</p>
-
           </form>
-          </div>
+        </div>
 
-          <div className={styles.pagesinsights}>
+        <div className={styles.pagesinsights}>
           <Link to={"./Covid"} style={{ textDecoration: "none" }}>
             <button className={styles.nextPreviusPagesinsights}>{">"}</button>
-            </Link>
-            <div className={styles.eclipsesinsights}>
-              <div className={styles.eclipsesinsightsRed}></div>
-              <div className={styles.eclipsesinsightsRed}></div>
-              <div className={styles.eclipsesinsightsRed}></div>
-              <div className={styles.eclipsesinsightsRed}></div>
-              <div className={styles.eclipsesinsightsLight}></div>
-            </div>
-            <button className={styles.nextPreviusPagesinsights} onClick={insightsSubmit}>{"<"}</button>
+          </Link>
+          <div className={styles.eclipsesinsights}>
+            <div className={styles.eclipsesinsightsRed}></div>
+            <div className={styles.eclipsesinsightsRed}></div>
+            <div className={styles.eclipsesinsightsRed}></div>
+            <div className={styles.eclipsesinsightsRed}></div>
+            <div className={styles.eclipsesinsightsLight}></div>
           </div>
+          <button
+            className={styles.nextPreviusPagesinsights}
+            onClick={insightsSubmit}
+          >
+            {"<"}
+          </button>
+        </div>
       </div>
 
       <div className={styles.cont2ins}>
@@ -126,7 +153,15 @@ function Insights() {
         </p>
       </div>
     </div>
-  );
+  );}
+  else{
+    return(
+      <Submit personalInfo={props.personalInfo} skills={props.skills} covid={props.covid} insights={insights}/>
+    )
+  }
+
+
+
 }
 
 export default Insights;
