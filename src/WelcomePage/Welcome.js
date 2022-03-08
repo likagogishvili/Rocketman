@@ -11,7 +11,7 @@ function Welcome() {
           <button className="welcomeButton">Start Questionnaire</button>
         </Link>
         <Link to={"/Aplication"} style={{ textDecoration: "none" }}>
-          <p>Submitted Applications</p>
+          <p className="welcome-p">Submitted Applications</p>
         </Link>
         <div className="welcome-img">
           <img src={rocketman} alt="" />

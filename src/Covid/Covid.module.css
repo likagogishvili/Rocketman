@@ -171,7 +171,6 @@ option {
   display: flex;
   width: 50%;
   flex-direction: column;
-  justify-content: space-between;
   text-align: center;
   align-items: center;
   height: 1400px;
@@ -188,18 +187,18 @@ option {
   color: #fe3b1f;
 }
 .cont2 > p {
-  position: relative;
-  width: 705px;
-  height: 700px;
+  width: 90%;
+  height: 40%;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
-  font-size: 38px;
+  font-size: 24px;
+  line-height: 200%;
+  display: flex;
   letter-spacing: 0.05em;
-  margin: auto;
   color: #ffffff;
   text-align: justify;
-  bottom: 10%;
+  margin-top: 12%;
 }
 .covidpages {
   position: relative;

@@ -8,6 +8,7 @@ function Submit(props) {
   // console.log(props.personalInfo, props.skills, props.covid, props.insights);
   const skills = props.skills.map((sk) => sk.experience * 1);
   const id = props.skills.map((sk) => sk.ids);
+  console.log(props.skills)
   function finalSubmit(event) {
     event.preventDefault();
     axios
@@ -21,7 +22,7 @@ function Submit(props) {
           {
             id: id[0],
             experience: skills[0],
-          }
+          },
         ],
         work_preference: props.covid.work,
         had_covid: props.covid.contactValue,
@@ -44,7 +45,7 @@ function Submit(props) {
         <div className="submit">
           <button onClick={finalSubmit}>Submit</button>
           <Link to={"./Insights"} style={{ textDecoration: "none" }}>
-            <p>Go Back</p>
+            <p className="submit-p">Go Back</p>
           </Link>
         </div>
       </div>

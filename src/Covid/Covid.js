@@ -271,7 +271,7 @@ function Covid(props) {
 
         <div className={styles["cont2"]}>
           <h1>Redberry Covid Policies</h1>
-          <p>
+          <p className={styles["text5"]}>
             As this infamous pandemic took over the world, we adjusted our
             working practices so that our employees can be as safe and
             comfortable as possible. We have a hybrid work environment, so you

@@ -1,23 +1,31 @@
 import "./Aplication.css";
-import { useState } from "react";
 function AplicationForm(props) {
-  const [checked, setChecked] = useState(true);
-  const [checkedf, setCheckedf] = useState(false);
-  const [checked1, setChecked1] = useState(true);
-  const [checkedf1, setCheckedf1] = useState(false);
-
+  let checked = true;
+  let checkedf= false;
+  let checked1= true;
+  let checkedf1 =false;
+  const skillvalues = [
+    "HTML",
+    "CSS",
+    "PHP",
+    "Laravel",
+    "React.JS",
+    "Vue.JS",
+    "Svelte",
+    "Angular",
+  ];
   let home = false;
   let sairme = false;
   let hybrid = false;
   let devtalk = false;
 
   if (props.userData.had_covid === false) {
-    setChecked(false);
-    setCheckedf(true);
+    checked=false;
+    checkedf = true;
   }
   if (props.userData.vaccinated === false) {
-    setChecked1(false);
-    setCheckedf1(true);
+    checked1=false;
+    checkedf1=true;
   }
 
   if (props.userData.work_preference === "from_home") {
@@ -32,6 +40,7 @@ function AplicationForm(props) {
   if (props.userData.will_organize_devtalk === true) {
     devtalk = true;
   }
+
   return (
     <div className="app_output">
       <div className="left">
@@ -140,7 +149,7 @@ function AplicationForm(props) {
             </div>
           </div>
         </div>
-        {checked && (
+        { checked && (
           <div className="info">
             <div className="questions">
               <p>When?</p>
@@ -222,7 +231,7 @@ function AplicationForm(props) {
         <div className="info">
           <h2>Skillets</h2>
           <div className="name_cont">
-            <p>id: {props.userData.skills[0].id}</p>
+            <p>id: {skillvalues[props.userData.skills[0].id]}</p>
             <p>title: {props.userData.skills[0].experience}</p>
           </div>
         </div>

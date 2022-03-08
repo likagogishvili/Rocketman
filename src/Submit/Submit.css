@@ -31,7 +31,7 @@
   text-align: center;
   border-radius: 50px;
 }
-.submit > p {
+.submit-p {
   width: 190px;
   height: 50px;
   font-family: Montserrat;
@@ -42,6 +42,5 @@
   align-items: center;
   text-align: center;
   text-decoration-line: underline;
-
   color: #ffffff;
 }

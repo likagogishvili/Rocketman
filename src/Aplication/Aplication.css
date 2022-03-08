@@ -43,8 +43,6 @@
   align-items: center;
   margin-right: 2%;
   border: none;
-
-
 }
 .numbers {
   position: relative;
@@ -76,7 +74,6 @@
 .right {
   height: 100%;
   width: 50%;
-
 }
 
 .info {
@@ -205,58 +202,58 @@ option {
 }
 
 .textarea3 {
-    width: 99%;
-    height: 80px;
-    background: #ffffff;
-    border: 1px solid #525557;
-    box-sizing: border-box;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    color: #454545;
-    padding: 3%;
-  }
+  width: 99%;
+  height: 80px;
+  background: #ffffff;
+  border: 1px solid #525557;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #454545;
+  padding: 3%;
+}
 
-  .questions1 {
-    height: 175px;
-    padding-top: 2%;
-  }
-  .questions1 > p {
-    position: relative;
-    width: 645px;
-    height: 52px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-  }
-  .arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-  }
-  .up{
-      border: solid black;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 3px;
-      transform: rotate(-135deg);
-      -webkit-transform: rotate(-135deg);
-  }
-  .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
+.questions1 {
+  height: 175px;
+  padding-top: 2%;
+}
+.questions1 > p {
+  position: relative;
+  width: 645px;
+  height: 52px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.up {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
 
-  @media only screen and (max-width: 600px) {
-    .app_output{
-      flex-direction: column;
-    }
+@media only screen and (max-width: 600px) {
+  .app_output {
+    flex-direction: column;
   }
+}

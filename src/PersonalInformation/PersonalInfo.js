@@ -57,8 +57,8 @@ function PersonalInfo() {
       setNumberError("Plese Enter Valid Phone Number");
       check = false;
     }
-    if(number.toString.length === 0){
-      setNumber('NaN')
+    if (number.toString.length === 0) {
+      setNumber("NaN");
     }
     return check;
   }
