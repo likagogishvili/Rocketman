@@ -14,7 +14,6 @@
   flex-direction: column;
   height: 1400px;
 }
-
 .cont1 > h1 {
   width: 716px;
   height: 128px;
@@ -71,7 +70,6 @@ option {
   line-height: 17px;
   display: flex;
   color: #454545;
-  
 }
 
 .insightsinput {
@@ -172,7 +170,6 @@ label {
   width: 50%;
   flex-direction: column;
   text-align: center;
-  align-items: center;
   justify-content: space-between;
   height: 1400px;
 }
@@ -203,7 +200,7 @@ label {
   color: #ffffff;
   text-align: justify;
   margin: auto;
-  bottom: 10%;
+  bottom: 17%;
 }
 .pagesinsights {
   position: relative;

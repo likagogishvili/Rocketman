@@ -1,6 +1,37 @@
 import "./Aplication.css";
+import { useState } from "react";
+function AplicationForm(props) {
+  const [checked, setChecked] = useState(true);
+  const [checkedf, setCheckedf] = useState(false);
+  const [checked1, setChecked1] = useState(true);
+  const [checkedf1, setCheckedf1] = useState(false);
 
-function AplicationForm() {
+  let home = false;
+  let sairme = false;
+  let hybrid = false;
+  let devtalk = false;
+
+  if (props.userData.had_covid === false) {
+    setChecked(false);
+    setCheckedf(true);
+  }
+  if (props.userData.vaccinated === false) {
+    setChecked1(false);
+    setCheckedf1(true);
+  }
+
+  if (props.userData.work_preference === "from_home") {
+    home = true;
+  }
+  if (props.userData.work_preference === "from_office") {
+    sairme = true;
+  }
+  if (props.userData.work_preference === "hybrid") {
+    hybrid = true;
+  }
+  if (props.userData.will_organize_devtalk === true) {
+    devtalk = true;
+  }
   return (
     <div className="app_output">
       <div className="left">
@@ -8,19 +39,19 @@ function AplicationForm() {
           <h2>Personal Information</h2>
           <div className="name_cont">
             <p>First Name</p>
-            <p>Eren</p>
+            <p>{props.userData.first_name}</p>
           </div>
           <div className="name_cont">
             <p>Last Name</p>
-            <p>yager</p>
+            <p>{props.userData.last_name}</p>
           </div>
           <div className="name_cont">
             <p>E Mail</p>
-            <p>eren@wings-of-freedom.ml</p>
+            <p>{props.userData.email}</p>
           </div>
           <div className="name_cont">
             <p>Phone</p>
-            <p>+995 591 93 50 80</p>
+            <p>{props.userData.phone}</p>
           </div>
         </div>
         <div className="info">
@@ -29,39 +60,44 @@ function AplicationForm() {
             <p>how would you prefer to work?</p>
             <div className="q">
               <input
+                disabled
                 type="radio"
                 id="office"
                 name="n"
                 value="office"
                 className="covidInput"
+                defaultChecked={sairme}
               />
-              <label for="office" className="covidlable">
+              <label htmlFor="office" className="covidlable">
                 From Sairme Office
               </label>
             </div>
 
             <div className="q">
               <input
+                disabled
                 type="radio"
                 id="home"
                 name="n"
                 value="home"
                 className="covidInput"
+                defaultChecked={home}
               />
-              <label for="home" className="covidlable">
+              <label htmlFor="home" className="covidlable">
                 From Home
               </label>
             </div>
-
             <div className="q">
               <input
+                disabled
                 type="radio"
                 id="hybrid"
                 name="n"
                 value="hybrid"
                 className="covidInput"
+                defaultChecked={hybrid}
               />
-              <label for="hybrid" className="covidlable">
+              <label htmlFor="hybrid" className="covidlable">
                 Hybrid
               </label>
             </div>
@@ -78,122 +114,141 @@ function AplicationForm() {
                 name="n1"
                 value="Yes"
                 className="covidInput"
+                defaultChecked={checked}
+                readOnly
+                disabled
               />
-              <label for="Yes" className="covidlable">
+              <label htmlFor="Yes" className="covidlable">
                 Yes
               </label>
             </div>
 
             <div className="q">
               <input
+                disabled
                 type="radio"
                 id="No"
                 name="n1"
                 value="No"
                 className="covidInput"
+                defaultChecked={checkedf}
+                readOnly
               />
-              <label for="No" className="covidlable">
+              <label htmlFor="No" className="covidlable">
                 No
               </label>
             </div>
           </div>
         </div>
-        <div className="info">
-          <div className="questions">
-            <p>When?</p>
-            <div className="q">
-              <input
-                type="date"
-                id="date1"
-                name="date1"
-                className="date"
-                min="2020-01-01"
-                max="2022-12-01"
-              />
+        {checked && (
+          <div className="info">
+            <div className="questions">
+              <p>When?</p>
+              <div className="q">
+                <input
+                  disabled
+                  type="date"
+                  id="date1"
+                  name="date1"
+                  className="date"
+                  min="2020-01-01"
+                  max="2022-12-01"
+                  value={props.userData.had_covid_at}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
+
         <div className="info">
           <div className="questions">
             <p>Have you been vaccinated?</p>
             <div className="q">
               <input
+                disabled
                 type="radio"
                 id="Y"
                 name="n3"
                 value="Y"
                 className="covidInput"
+                defaultChecked={checked1}
+                readOnly
               />
-              <label for="Y" className="covidlable">
+              <label htmlFor="Y" className="covidlable">
                 Yes
               </label>
             </div>
 
             <div className="q">
               <input
+                disabled
                 type="radio"
                 id="N"
                 name="n3"
                 value="N"
                 className="covidInput"
+                defaultChecked={checkedf1}
+                readOnly
               />
-              <label for="N" className="covidlable">
+              <label htmlFor="N" className="covidlable">
                 No
               </label>
             </div>
           </div>
         </div>
 
-        <div className="info">
-          <div className="questions">
-            <p>When did you get your last covid vaccine?</p>
-            <div className="q">
-              <input
-                type="date"
-                id="date1"
-                name="date1"
-                className="date"
-                min="2020-01-01"
-                max="2022-12-01"
-              />
+        {checked1 && (
+          <div className="info">
+            <div className="questions">
+              <p>When did you get your last covid vaccine?</p>
+              <div className="q">
+                <input
+                  disabled
+                  type="date"
+                  id="date1"
+                  name="date1"
+                  className="date"
+                  min="2020-01-01"
+                  max="2022-12-01"
+                  value={props.userData.vaccinated_at}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
 
       <div className="right">
         <div className="info">
           <h2>Skillets</h2>
           <div className="name_cont">
-            <p>php</p>
-            <p>years of experience 4</p>
-          </div>
-          <div className="name_cont">
-            <p>html</p>
-            <p>yaars of experience 4</p>
+            <p>id: {props.userData.skills[0].id}</p>
+            <p>title: {props.userData.skills[0].experience}</p>
           </div>
         </div>
 
+        {devtalk && (
+          <div className="info">
+            <div className="questions1">
+              <p>What would you speak about at Devtalk?</p>
+              <textarea
+                className="textarea3"
+                name="comment"
+                form="usrform"
+                value={props.userData.devtalk_topic}
+              ></textarea>
+            </div>
+          </div>
+        )}
         <div className="info">
           <div className="questions1">
-            <p>What would you speak about at Devtalk?</p>
+            <p></p>
             <textarea
               className="textarea3"
               name="comment"
               form="usrform"
               placeholder="I would..."
-            ></textarea>
-          </div>
-        </div>
-
-        <div className="info">
-          <div className="questions1">
-            <p>What would you speak about at Devtalk?</p>
-            <textarea
-              className="textarea3"
-              name="comment"
-              form="usrform"
-              placeholder="I would..."
+              value={props.userData.something_special}
             ></textarea>
           </div>
         </div>

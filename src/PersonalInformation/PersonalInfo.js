@@ -42,7 +42,12 @@ function PersonalInfo() {
       !mail.includes("@") ||
       !mail.trim().length === 0 ||
       !mail.includes(".") ||
-      !(mail.includes("com") || mail.includes("org") || mail.includes("ru") || mail.includes("ge"))
+      !(
+        mail.includes("com") ||
+        mail.includes("org") ||
+        mail.includes("ru") ||
+        mail.includes("ge")
+      )
     ) {
       setMailError("Please Enter Valid Mail");
       check = false;
@@ -51,6 +56,9 @@ function PersonalInfo() {
     if (!(!number.includes("+995") || number.toString().length === 0)) {
       setNumberError("Plese Enter Valid Phone Number");
       check = false;
+    }
+    if(number.toString.length === 0){
+      setNumber('NaN')
     }
     return check;
   }
@@ -136,7 +144,7 @@ function PersonalInfo() {
         </div>
       </div>
     );
-  }else {
+  } else {
     return <Skills personalInfo={personalInfo} setnextpage={setnextpage} />;
   }
 }

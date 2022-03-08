@@ -8,19 +8,24 @@ function Covid(props) {
   const [covidDate, setCovidDate] = useState("");
   const [vacinatedDate, setVacinatedDate] = useState("");
   const [vaccinated, setVacinated] = useState("");
-
   const [workError, SetWorkError] = useState("");
   const [contactError, setcontactError] = useState("");
   const [vaccinatedError, setVacinatedError] = useState("");
   const [covidDateError, setCovidDateError] = useState("");
   const [vacinatedDateError, setVacinatedDateError] = useState("");
   const [nextpage, setnextpage] = useState(false);
+  const d = "1111-01-01";
 
-  const [contactValue,setContactVal]=useState("")
-  const [vacinatedValue,setVacVal]=useState("")
+  const [contactValue, setContactVal] = useState("");
+  const [vacinatedValue, setVacVal] = useState("");
 
-  const covid = { work, contactValue, covidDate, vacinatedValue, vacinatedDate};
-
+  const covid = {
+    work,
+    contactValue,
+    covidDate,
+    vacinatedValue,
+    vacinatedDate,
+  };
 
   function workChange(event) {
     setWork(event.target.value);
@@ -61,20 +66,22 @@ function Covid(props) {
         setCovidDateError("Please Choose Date");
         check = false;
       }
-      setContactVal(true)
+      setContactVal(true);
     }
     if (covidContact === "No") {
-      setContactVal(false)
+      setContactVal(false);
+      setCovidDate(d);
     }
     if (vaccinated === "Y") {
       if (vacinatedDate.trim().length === 0) {
         setVacinatedDateError("Please Choose Date");
         check = false;
       }
-      setVacVal(true)
+      setVacVal(true);
     }
     if (vaccinated === "N") {
-      setVacVal(false)
+      setVacVal(false);
+      setVacinatedDate(d);
     }
 
     return check;
@@ -245,7 +252,7 @@ function Covid(props) {
             </form>
           </div>
           <div className={styles["covidpages"]}>
-              <button className={styles["nextPreviusPages"]}>{"<"}</button>
+            <button className={styles["nextPreviusPages"]}>{"<"}</button>
             <div className={styles["covideclipses"]}>
               <div className={styles["covideclipseRed"]}></div>
               <div className={styles["covideclipseRed"]}></div>
@@ -277,9 +284,13 @@ function Covid(props) {
       </div>
     );
   } else {
-    return(
-    <Insights personalInfo={props.personalInfo} skills={props.skills} covid={covid}/>
-    )
+    return (
+      <Insights
+        personalInfo={props.personalInfo}
+        skills={props.skills}
+        covid={covid}
+      />
+    );
   }
 }
 

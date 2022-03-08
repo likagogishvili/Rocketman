@@ -11,23 +11,22 @@ function Skills(props) {
   const [skillError, setSkillError] = useState("");
   const [experienceError, setexperienceError] = useState("");
   const [nextpage, setnextpage] = useState(false);
-  const [selectedSkills, setSelectedSkills] = useState([])
+  const [selectedSkills, setSelectedSkills] = useState([]);
 
   function addSkill() {
     const skill = {
       language,
       experience,
-      ids
-    }
-    if (selectedSkills.find(x => x.language === language)) {
-      alert('This skill is already selected')
-    }
-    else {
-      setSelectedSkills([...selectedSkills, skill])
+      ids,
+    };
+    if (selectedSkills.find((x) => x.language === language)) {
+      alert("This skill is already selected");
+    } else {
+      setSelectedSkills([...selectedSkills, skill]);
     }
   }
   function onDeleteElement(index) {
-    setSelectedSkills([...selectedSkills.filter((x, i) => i !== index)])
+    setSelectedSkills([...selectedSkills.filter((x, i) => i !== index)]);
   }
 
   function SkillsValidations() {
@@ -46,9 +45,9 @@ function Skills(props) {
     return check;
   }
 
-  function languageAndId(value){
-    setIds(value.id)    
-    setLanguage(value.value)
+  function languageAndId(value) {
+    setIds(value.id);
+    setLanguage(value.value);
   }
 
   function SubmitSkillPage() {
@@ -84,7 +83,7 @@ function Skills(props) {
             />
 
             <div className={styles.pages}>
-                <button className={styles.nextPreviusPages}>{"<"}</button>
+              <button className={styles.nextPreviusPages}>{"<"}</button>
               <div className={styles.eclipses}>
                 <div className={styles.eclipseRed}></div>
                 <div className={styles.eclipseRed}></div>
@@ -116,12 +115,7 @@ function Skills(props) {
       </div>
     );
   } else {
-    return (
-      <Covid
-        personalInfo={props.personalInfo}
-        skills={selectedSkills}
-      />
-    );
+    return <Covid personalInfo={props.personalInfo} skills={selectedSkills} />;
   }
 }
 

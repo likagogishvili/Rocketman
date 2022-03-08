@@ -49,7 +49,6 @@
   border: 1px solid #525557;
   box-sizing: border-box;
   padding: 2%;
-  
 }
 ::placeholder {
   font-family: Montserrat;
@@ -136,7 +135,6 @@
   font-family: Rowdies;
   font-style: bold;
   font-weight: bold;
-  
 }
 .eclipses {
   display: flex;

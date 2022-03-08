@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PersonalInfo from "./PersonalInformation/PersonalInfo";
 import Skills from "./TechnicalSkillset/Skills";
 import Covid from "./Covid/Covid";
-import Insights from './Insights/Insights'
+import Insights from "./Insights/Insights";
 import Submit from "./Submit/Submit";
-import Thanks from './Thanks/Thanks'
+import Thanks from "./Thanks/Thanks";
 import Aplication from "./Aplication/Aplication";
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
             <Covid />
           </Route>
           <Route path="/Insights">
-            <Insights/>
+            <Insights />
           </Route>
           <Route path="/Submit">
             <Submit />
@@ -35,9 +35,8 @@ function App() {
             <Thanks />
           </Route>
           <Route path="/Aplication">
-            <Aplication/>
+            <Aplication />
           </Route>
-
         </Switch>
       </div>
     </Router>

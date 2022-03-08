@@ -54,7 +54,6 @@ function SkillsData(props) {
     });
   }
 
-
   useEffect(() => {
     getskill();
   }, []);

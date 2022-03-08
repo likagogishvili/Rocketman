@@ -40,7 +40,7 @@ form {
   justify-content: space-between;
 }
 
-option{
+option {
   font-family: Montserrat;
   font-style: italic;
   font-weight: normal;
@@ -50,7 +50,8 @@ option{
   color: #454545;
 }
 
-input, select{
+input,
+select {
   position: relative;
   width: 455px;
   height: 54px;
@@ -59,7 +60,7 @@ input, select{
   box-sizing: border-box;
   padding: 2%;
 }
-select{
+select {
   font-family: Montserrat;
   font-style: italic;
   font-weight: normal;
@@ -69,10 +70,9 @@ select{
   align-items: center;
   color: #454545;
   cursor: pointer;
-
 }
 
-label{
+label {
   font-family: Montserrat;
   font-style: italic;
   font-weight: normal;
@@ -157,7 +157,6 @@ form > p {
   letter-spacing: 0.05em;
   color: #ffffff;
   text-align: justify;
-
 }
 .pages {
   position: relative;
@@ -251,19 +250,19 @@ form > p {
   font-size: 14px;
   line-height: 17px;
   display: flex;
-  align-items: center;  
+  align-items: center;
   color: #000000;
 }
-.output > button{
+.output > button {
   position: relative;
   width: 30px;
   height: 30px;
-  border: solid 3px #EB3535 ;
+  border: solid 3px #eb3535;
   border-radius: 50%;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  color: #EB3535;
+  color: #eb3535;
   right: 1%;
 }

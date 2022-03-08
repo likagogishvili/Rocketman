@@ -94,9 +94,7 @@ option {
   line-height: 17px;
   display: flex;
   color: #454545;
-
 }
-
 
 .covidlable {
   position: relative;
@@ -153,7 +151,7 @@ option {
   align-items: center;
   color: #fe3b1f;
 }
-.errorText{
+.errorText {
   width: 209px;
   height: 16px;
   left: 290px;
@@ -177,7 +175,6 @@ option {
   text-align: center;
   align-items: center;
   height: 1400px;
-  
 }
 
 .cont2 > h1 {
@@ -257,5 +254,3 @@ option {
   justify-content: space-between;
   min-height: 600px;
 }
-
-
