@@ -52,12 +52,13 @@ function PersonalInfo() {
       setMailError("Please Enter Valid Mail");
       check = false;
     }
-
-    if (!(!number.includes("+995") || number.toString().length === 0)) {
-      setNumberError("Plese Enter Valid Phone Number");
-      check = false;
+    if (!(number.length === 0)) {
+      if (!(number.substring(0, 3) === "995")) {
+        setNumberError("Plese Enter Valid Phone Number");
+        check = false;
+      }
     }
-    if (number.toString.length === 0) {
+    if (number.toString().length === 0) {
       setNumber("NaN");
     }
     return check;
@@ -68,7 +69,6 @@ function PersonalInfo() {
       setnextpage(true);
     }
   }
-
   function handleSubmit(event) {
     event.preventDefault();
   }

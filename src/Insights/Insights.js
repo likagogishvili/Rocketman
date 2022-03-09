@@ -127,7 +127,7 @@ function Insights(props) {
 
           <div className={styles.pagesinsights}>
             <Link to={"./Covid"} style={{ textDecoration: "none" }}>
-              <button className={styles.nextPreviusPagesinsights}>{">"}</button>
+              <button className={styles.nextPreviusPagesinsights}>{"<"}</button>
             </Link>
             <div className={styles.eclipsesinsights}>
               <div className={styles.eclipsesinsightsRed}></div>
@@ -140,7 +140,7 @@ function Insights(props) {
               className={styles.nextPreviusPagesinsights}
               onClick={insightsSubmit}
             >
-              {"<"}
+              {">"}
             </button>
           </div>
         </div>

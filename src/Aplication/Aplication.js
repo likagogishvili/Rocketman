@@ -9,7 +9,6 @@ function Aplication() {
   const [arrow, setarrow] = useState(false);
   const [arrow1, setarrow1] = useState(false);
   const [arrow2, setarrow2] = useState(false);
-  const length1 = userData.length;
 
   function personalInfo() {
     Axios.get(link).then((response) => {
@@ -27,7 +26,6 @@ function Aplication() {
   function up2() {
     setarrow2(!arrow2);
   }
-
   useEffect(() => {
     personalInfo();
   }, []);
@@ -52,7 +50,7 @@ function Aplication() {
             {!arrow1 && <i className="arrow up"></i>}
           </button>
         </div>
-        {arrow1 && <AplicationForm userData={userData[length1 - 1]} />}
+        {arrow1 && <AplicationForm userData={userData[8]} />}
 
         <div className="heading">
           <p className="numbers">3</p>

@@ -8,7 +8,6 @@ function Submit(props) {
   // console.log(props.personalInfo, props.skills, props.covid, props.insights);
   const skills = props.skills.map((sk) => sk.experience * 1);
   const id = props.skills.map((sk) => sk.ids);
-  console.log(props.skills)
   function finalSubmit(event) {
     event.preventDefault();
     axios
